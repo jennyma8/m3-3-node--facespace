@@ -10,11 +10,9 @@ const handleFourOhFour = (req, res) => {
   res.status(404).send("I couldn't find what you're looking for.");
 };
 
+//#1.3
 const handleHomepage = (req, res) => {
-   res.status(200).send('homepage');
-   res.render('pages/homepage', {
-     users: users
-   })
+   res.status(200).render('pages/homepage');
 };
 
 // -----------------------------------------------------

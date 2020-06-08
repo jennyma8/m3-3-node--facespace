@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+
+<div class='main'>
+    <% users.forEach(user => { %>
+    <%= user._id %>
+    <%= user.name %>
+    <%= user.friends %>
+    <img src="<%= user.avatarUrl %>">
+    <% }); %>
+</div> 
+
+<%- include('../partials/footer') %>

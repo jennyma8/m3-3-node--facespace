@@ -16,9 +16,21 @@ const handleHomepage = (req, res) => {
 };
 
 //#2.1 _id from 1106 to 1032
+const findUser = (value) => {
+  return users.find((user) => Object.values(user).includes(value)) || null;
+};
+
+const getFriends = (arr) => {
+  return users.filter((user) => arr.includes(user._id));
+};
+
 const handleProfilePage = (req, res) => {
+  const _id = req.params._id;
+  const user = findUser(_id);
+
   res.status(200).render('pages/profile', {
-    users: users.filter((users) => users._id === req.params._id),
+    user: users.filter((user) => user._id === req.params._id),
+    friends: getFriends(user.friends),
   });
 };
 

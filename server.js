@@ -15,7 +15,7 @@ const handleHomepage = (req, res) => {
    res.status(200).render('pages/homepage', {users: users});
 };
 
-//#2.1 _id from 1106 to 1032
+//#2.1 _id from 1006 to 1032
 const findUser = (value) => {
   return users.find((user) => Object.values(user).includes(value)) || null;
 };
@@ -35,7 +35,7 @@ const handleProfilePage = (req, res) => {
 };
 
 const handleSignin = (req, res) => {
-  res.send('ok')
+  res.status(200).render('pages/signin')
 };
 
 // -----------------------------------------------------
@@ -48,10 +48,7 @@ express()
 
   // endpoints
 .get('/', handleHomepage)
-//#2.1 see line 19
 .get('/users/:_id', handleProfilePage)
-
-//#3.1
 .get('/signin', handleSignin)
 
   // a catchall endpoint that will send the 404 message.

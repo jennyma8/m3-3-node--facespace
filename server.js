@@ -18,7 +18,7 @@ const handleHomepage = (req, res) => {
 //#2.1 _id from 1106 to 1032
 const handleProfilePage = (req, res) => {
   res.status(200).render('pages/profile', {
-    users: users.filter((user) => user._id === req.params._id),
+    users: users.filter((users) => users._id === req.params._id),
   });
 };
 

@@ -13,3 +13,22 @@
 .homepage__all--user img {
   width: 120px;
 }
+
+.homepage__all--user img:hover {
+  border: 5px solid var(--primary-color);
+}
+
+.ribbon {
+  background: var(--primary-color);
+  text-align: center;
+  top: 10px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 0;
+  color: white;
+  right: -30px;
+}
+position: absolute;
+ 

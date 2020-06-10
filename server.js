@@ -10,9 +10,10 @@ const handleFourOhFour = (req, res) => {
   res.status(404).send("I couldn't find what you're looking for.");
 };
 
+let currentUser = {}
 //#1.3
 const handleHomepage = (req, res) => {
-   res.status(200).render('pages/homepage', {users: users});
+   res.status(200).render('pages/homepage', { currentUser: currentUser, users: users});
 };
 
 //#2.1 _id from 1006 to 1032
@@ -31,14 +32,17 @@ const handleProfilePage = (req, res) => {
   res.status(200).render('pages/profile', {
     user: users.filter((user) => user._id === req.params._id),
     friends: getFriends(user.friends),
+    currentUser: currentUser,
   });
 };
 
 const handleSignin = (req, res) => {
-  res.status(200).render('pages/signin')
+  if (currentUser.name) {
+    res.status(307).redirect('/');
+  } else {
+    res.status(200).render('pages/signin', { currentUser: currentUser});
+  }  
 };
-
-let currentUser = {}
 
 const handleName = (req, res) => {
   const firstName = req.query.firstName;

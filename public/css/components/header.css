@@ -4,7 +4,24 @@
   padding: 0 var(--page-horizontal-padding);
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
+
+
+.header a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
 .header h1 {
   color: #fff;
+  
+  
 }
+
+.header h2 {
+  color: #fff;
+  
+}
+

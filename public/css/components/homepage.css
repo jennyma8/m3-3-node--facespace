@@ -19,16 +19,14 @@
 }
 
 .ribbon {
+  position: relative;
   background: var(--primary-color);
   text-align: center;
-  top: 10px;
-  width: 100px;
+  top: -20px;
+  width: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 3px 0;
   color: white;
-  right: -30px;
 }
-position: absolute;
- 
